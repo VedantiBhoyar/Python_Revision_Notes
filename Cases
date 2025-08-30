@@ -1,0 +1,12 @@
+Different types of cases:
+camelCase
+snake_case
+PascalCase
+
+for e.g.
+x = Vedanti Bhoyar
+
+camelcase : vedantiBhoyar
+snakecase : vedanti_bhoyar
+pascalcase : VedantiBhoyar
+
