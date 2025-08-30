@@ -1,0 +1,25 @@
+parameter is a variable declared in a function's definition, serving as a placeholder for the data it expects to receive when called.
+An argument is the actual value or data passed into the function when it's invoked
+
+In Python, arguments passed to functions can be categorized as either positional or keyword arguments
+
+Positional Arguments:
+def greet(name, message):
+    print(f"Hello, {name}! {message}")
+
+greet("Alice", "How are you?") # "Alice" is assigned to 'name', "How are you?" to 'message'
+
+
+Keyword Arguments:
+def greet(name, message):
+    print(f"Hello, {name}! {message}")
+
+greet(message="Have a great day!", name="Bob") # Order doesn't matter for keyword arguments
+
+
+Function Rest Parameter:
+function sum(...args) {
+  let sum = 0;
+  for (let arg of args) sum += arg;
+  return sum;
+}
