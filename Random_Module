@@ -1,0 +1,10 @@
+randrange()	Returns a random number between the given range
+randint()	Returns a random number between the given range
+choice()	Returns a random element from the given sequence
+choices()	Returns a list with a random selection from the given sequence
+shuffle()	Takes a sequence and returns the sequence in a random order
+sample()	Returns a given sample of a sequence
+random()	Returns a random float number between 0 and 1
+uniform()	Returns a random float number between two given parameters
+
+If you are selecting multiple values like sample(my_list,3). It will give you all unique numbers.
