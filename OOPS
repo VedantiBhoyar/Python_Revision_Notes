@@ -1,0 +1,43 @@
+What is OOP?
+
+OOP (Object-Oriented Programming) is a way of structuring programs around objects instead of just functions and logic.
+
+Python supports OOP fully.
+
+Think of it as designing your code the way you would design real-world things.
+
+Blueprint Analogy
+
+A class is like a blueprint (a plan or design).
+
+An object is like a house built from that blueprint.
+
+You can create multiple objects from the same class, just like you can build many houses from one blueprint.
+
+Example:
+
+class Car:  # Blueprint
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+# Objects created from the Car blueprint
+car1 = Car("Rolls Royce", "White")
+car2 = Car("Tesla", "Black")
+
+
+Here, Car is the blueprint, and car1, car2 are real cars (objects).
+
+
+
+Advantages of OOP
+
+Clear Structure – Classes organize code neatly.
+
+Reusability – Write once, use many times.
+
+Maintainability – Easy to update and debug.
+
+DRY Principle – Don’t Repeat Yourself.
+
+If you find yourself copying code, move it into a class or function.
