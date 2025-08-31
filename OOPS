@@ -1,43 +1,154 @@
-What is OOP?
+Object-oriented programming is a programming paradigm that provides a means of structuring programs so that properties and behaviors are bundled into individual objects.
 
-OOP (Object-Oriented Programming) is a way of structuring programs around objects instead of just functions and logic.
+For example, an object could represent a person with properties like a name, age, and address and behaviors such as walking, talking, breathing, and running.
 
-Python supports OOP fully.
+OOPs have main 4 pillars,
 
-Think of it as designing your code the way you would design real-world things.
+Inheritance
+Polymorphism
+Data Abstraction
+Encapsulation
 
-Blueprint Analogy
+Class & Object
+A class is a data type that acts as a template definition for a particular kind of object or you can say a class is a blueprint of an object.
 
-A class is like a blueprint (a plan or design).
+The object is an entity that has state and behavior. It may be any real-world object like the mouse, keyboard, chair, table, pen, etc. The method is a function that is associated with an object.
 
-An object is like a house built from that blueprint.
+Everything in Python is an object, and almost everything has attributes and methods. A class in Python is created by using the keyword class and giving it a name, like in this example:
 
-You can create multiple objects from the same class, just like you can build many houses from one blueprint.
+class Employee:
+#To instantiate an object
+employee1 = Employee()      #here employee1 is the object
 
-Example:
+There’s a special function that’s being called at the moment of creation, called a constructor. The constructor will be called only once.
 
-class Car:  # Blueprint
-    def __init__(self, brand, color):
-        self.brand = brand
-        self.color = color
-
-# Objects created from the Car blueprint
-car1 = Car("Rolls Royce", "White")
-car2 = Car("Tesla", "Black")
-
-
-Here, Car is the blueprint, and car1, car2 are real cars (objects).
-
+In Python, the method the __init__() simulates the constructor of the class.
+It accepts the self-keyword as a first argument which allows accessing the attributes or method of the class. We can pass any number of arguments at the time of creating the class object, depending upon the __init__() definition.
+It is mostly used to initialize the class attributes.
+Every class must have a constructor, even if it simply relies on the default constructor.
 
 
-Advantages of OOP
+Constructors can be of two types.
 
-Clear Structure – Classes organize code neatly.
+Parameterized Constructor
+Non-parameterized Constructor
 
-Reusability – Write once, use many times.
+class Vehicle:
+    def __init__(self):                   #Non-parameterized Constructor
+        print("Hi from Non-parameterized Contructor")
+    def __init__(self, name, model):      #Parameterized Constructor
+        self.name = name
+        self.model = model
 
-Maintainability – Easy to update and debug.
+    def Car(self):
+        print(self.name, self.model)
+    def Bike(self):
+        print(self.name, self.model)
 
-DRY Principle – Don’t Repeat Yourself.
+car1 = Vehicle("Alto",2019)
+car2 = Vehicle("Innova",2020)
 
-If you find yourself copying code, move it into a class or function.
+bike1 = Vehicle("Honda",2019)
+bike2 = Vehicle("Pulser", 2012)
+
+car1.Car()
+car2.Car()
+
+bike1.Bike()
+bike2.Bike()
+
+
+Encapsulation
+You can hide data from the outside world, and from other objects, by marking data and functions with specific keywords. These keywords are known as access modifiers.
+
+The way Python accomplishes data hiding is by adding prefixes to attribute names. One leading underscore, _, is a message to the outside world that this data probably shouldn't be touched. One leading underscore still allows for data to be modified, which Python refers to as protected. By having two leading underscores, __, it is referred to as private.
+
+Getters and setters, which are also known as accessors and mutators, are methods dedicated to reading or changing your data. Getters play the part of making your inner data readable to the outside, and Setters are methods that can change your data directly.
+
+Decorators
+It is an important subject in Python.
+Decorators are functions that take your function as an input.
+The purpose is to give your function a feature it didn’t have before.
+
+
+Inheritance
+Inheritance is the process by which one class takes on the attributes and methods of another. Newly formed classes are called child classes, and the classes that you derive child classes from are called parent classes.
+
+You inherit from a parent class by creating a new class and putting the name of the parent class into parentheses:
+
+
+class Animal:  
+    def speak(self):  
+        print("Animal Speaks")  
+
+#child class Dog inherits the base class Animal  
+class Dog(Animal):  
+    def bark(self):  
+        print("Dog Barks")  
+
+d = Dog()  
+d.bark()  
+d.speak() 
+The above example is for single inheritance, in python we also have other types of inheritance too.
+
+
+
+
+example:
+class Omnivorous:
+    def __init__(self,food):
+        self.food=food
+    def eat(self):
+        print(f"I am eating {self.food}")
+
+class Animal(Omnivorous):
+    def __init__(self,name,age,food):
+        super().__init__(food) 
+        self.name=name
+        self.age=age
+    def intro(self):
+        print(f"I am {self.name} and I am {self.age} years old")
+        
+dog = Animal("Leo",3,"Dog_Food")
+dog.intro()
+dog.eat()
+
+cat = Animal("Lessi",4,"Fish")
+cat.intro()
+cat.eat()
+
+
+Method Overriding
+Method overriding, allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes. i.e. having two or more methods with same name and same parameters, where one is in base class and other in child class.
+
+# Defining parent class 
+class Parent(): 
+      
+    # Constructor 
+    def __init__(self): 
+        self.value = "Inside Parent"
+          
+    # Parent's show method 
+    def show(self): 
+        print(self.value) 
+          
+# Defining child class 
+class Child(Parent): 
+      
+    # Constructor 
+    def __init__(self): 
+        self.value = "Inside Child"
+          
+    # Child's show method 
+    def show(self): 
+        print(self.value) 
+          
+          
+# Driver's code 
+obj1 = Parent() 
+obj2 = Child() 
+  
+obj1.show() 
+obj2.show() 
+Note: There is no method overloading in Python. Method overloading is a feature that allows you to define multiple methods with the same name, but with different parameters. This is not possible in Python, as the interpreter will only allow you to define one method with a given name.
+
